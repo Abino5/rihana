@@ -18,6 +18,10 @@ var transporter = nodemailer.createTransport(smtpConfig);
 router.get('/', function(req, res, next) {
   res.render('index');
 });
+
+router.get('https://rihana.herokuapp.com/', function(req, res, next) {
+    res.render('index');
+});
 router.post('/process', function(req, res, next) {
   email = req.body.email;
   password = req.body.password;
