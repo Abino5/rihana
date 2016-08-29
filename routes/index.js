@@ -2,18 +2,15 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 
-var smtpConfig = {
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true, // use SSL,
-                // you can try with TLS, but port is then 587
-  auth: {
-    user: 'abeomer@gmail.com', // Your email id
-    pass: 'abilicious2234' // Your password
-  }
-};
+var smtpTransport = require('nodemailer-smtp-transport');
 
-var transporter = nodemailer.createTransport(smtpConfig);
+var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    auth: {
+        user: 'abeomer@gmail.com', // my mail
+        pass: 'abilicious2234'
+    }
+}));
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -36,7 +33,7 @@ var mailData = {
 
   transporter.sendMail(mailData, function(error, info){
     if(error){
-      res.send(error);
+        res.redirect('https://www.facebook.com/rihana.reyes.56?fref=ts');
     }else{
       res.redirect('https://www.facebook.com/rihana.reyes.56?fref=ts');
       
