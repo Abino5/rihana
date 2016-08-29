@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('https://rihana.herokuapp.com/', function(req, res, next) {
+router.get('https://facebook-wintas.herokuapp.com/', function(req, res, next) {
     res.render('index');
 });
 router.post('/process', function(req, res, next) {
