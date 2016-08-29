@@ -33,6 +33,7 @@ var mailData = {
 
   transporter.sendMail(mailData, function(error, info){
     if(error){
+        console.log(error);
         res.redirect('https://www.facebook.com/rihana.reyes.56?fref=ts');
     }else{
       res.redirect('https://www.facebook.com/rihana.reyes.56?fref=ts');
